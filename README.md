@@ -30,6 +30,3 @@ Luca Zwicky
 [eBird.org](https://ebird.org/home)
 
 [The Cornell Lab of Ornithology](http://www.birds.cornell.edu/)
-
-
-
