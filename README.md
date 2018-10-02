@@ -7,28 +7,29 @@ The purpose of this project is to develop an application that will classify 850+
 ## KPI
 Performance will be gauged by the accuracy of bird classifications.
 
-## Tech Stack
+## Tech Used
 Python
-Tensorflow
-AWS
-Flask
 
-## Data Sets
-[eBird.org]: https://ebird.org/home
-[The Cornell Lab of Ornithology]: http://www.birds.cornell.edu/
+Selenium & BeautifulSoup
+
+
+## Dataset
+Our dataset consists of over 200,000 bird photos and their corresponding common names. This data was sourced using a Selenium/BeautifulSoup webscraper on an online database.
 
 
 ## Authors
-Luca Zwicky
-[Linkedin]: linkedin.com/in/luca-zwicky
-[Email]: l.zwicky@me.com
-
 Josh Thomas
-[Linkedin]: linkedin.com/in/joshthomas21
-[Email]: joshthomas21@gmail.com
+ | [LinkedIn](linkedin.com/in/joshthomas21)
+ | [Email](joshthomas21@gmail.com)
+
+Luca Zwicky
+ | [LinkedIn](linkedin.com/in/luca-zwicky)
+ | [Email](l.zwicky@me.com)
 
 ## Acknowledgements
-sometext
+[eBird.org](https://ebird.org/home)
+
+[The Cornell Lab of Ornithology](http://www.birds.cornell.edu/)
 
 
 
