@@ -13,13 +13,13 @@ from selenium.common.exceptions import StaleElementReferenceException
 # Start script timer
 start = time.time()
 
-# Set Firefox driver options for running headless
+# Set Firefox driver options to run headless
 options = Options()
 options.add_argument("--headless")
 driver = webdriver.Firefox(firefox_options=options)
 
-# Telling script to keep trying action for 20 seconds before returning error
-driver.implicitly_wait(20)
+# Telling script to keep trying action for 200 seconds before returning error (to handle slow page load times)
+driver.implicitly_wait(200)
 
 # Initialize Firefox driver
 driver.get("https://ebird.org/media/catalog?mediaType=p&region=United%20States%20(US)&regionCode=US")
@@ -29,10 +29,10 @@ driver.find_element_by_xpath('//*[@id="SearchToolbar-mainPanel"]/div[2]/div[3]/f
 driver.find_element_by_xpath('//*[@id="RadioGroup-sort"]/span[2]/label/span').click()
 time.sleep(10)
 
-# AJAX button - Sends post request for 50x more pictures loaded to site
+# Send AJAX post request for 50x more pictures loaded to site
 show_more_button = driver.find_element_by_xpath('//*[@id="show_more"]')
 
-# While loop clicks 'show more' button until 'if count' statement criteria met - Also prints loop count
+# While loop clicks 'show more' button until count reaches specified number - Also prints loop count to track progress
 count = 1
 while count > 0:
     try:
@@ -47,7 +47,7 @@ while count > 0:
         show_more_button.click()
     count = count + 1
     print(count)
-    if count == 20000:
+    if count == 1050:
         break
 
 # End script timer and print value in seconds
@@ -65,8 +65,8 @@ for img_tag in soup.find_all('img'):
     data_dict['image_url'] = img_tag['src']
     img_data.append(data_dict)
 
-# Writing scraped data to CSV file
-with open('XYZtest.csv', 'w', newline='') as birddata:
+# Writing data to CSV file
+with open('50kBestQuality.csv', 'w', newline='') as birddata:
     fieldnames = ['image_name', 'image_url']
     writer = csv.DictWriter(birddata, fieldnames=fieldnames)
     writer.writeheader()
@@ -74,6 +74,5 @@ with open('XYZtest.csv', 'w', newline='') as birddata:
         writer.writerow(data)
 
 # Killing the driver when finished
-# change sleep to 1000 sec when in production
 time.sleep(1000)
 driver.close()
