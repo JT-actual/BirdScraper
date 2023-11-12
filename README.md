@@ -3,8 +3,8 @@ Web scraping script utilizing Python, Selenium, & Beautiful Soup. Used to scrape
 
 ## Author
 Josh Thomas
- | [LinkedIn](linkedin.com/in/joshthomas21)
- | [Email](joshthomas21@gmail.com)
+ | [LinkedIn](linkedin.com/in/JT-actual)
+ | [Email](josh@joshthomas.io)
 
 
 ## Acknowledgements
